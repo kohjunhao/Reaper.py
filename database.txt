@@ -1,0 +1,5 @@
+write,False
+catch,True
+level,True
+names,['Shaymin','Venusaur']
+index,['75','3','49']
