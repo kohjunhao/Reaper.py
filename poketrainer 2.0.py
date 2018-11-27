@@ -14,7 +14,7 @@
 ####################      MOVE YOUR MOUSE TO EXTREME TOP LEFT 
 
 
-#################### input 'smartspam' and ENTER to copy paste
+#################### input 'spam' and ENTER to copy paste
 #################### xp generation scales to the length of your msg
 #################### comes at no lag/cost of writing so it is
 #################### very preferable
@@ -85,11 +85,15 @@ def moves():
         pyautogui.typewrite('\n')
         time.sleep(1)
 
+
+
+
+
 def start():
-    choice = input('enter to spam, smartspam for paste, anything else to moves: ')
+    choice = input('enter to run, spam for paste, anything else for move input: ')
     if choice == '':
         spam()
-    elif choice == 'smartspam':
+    elif choice == 'spam':
         smart()
     else:
         moves()
