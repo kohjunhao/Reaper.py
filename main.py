@@ -119,7 +119,7 @@ async def on_message(message):
             link = text[int(index):int(index)+50].split('"')[0]
         except ValueError:
             link = 'No pokemon found named '+pokemon
-        msg = ('drytracer:  '+link).format(message)
+        msg = (link).format(message)
         await client.send_message(message.channel, msg)
         return
 
@@ -138,8 +138,8 @@ async def on_message(message):
     # START OF !DETAILS
 
     if message.content.lower() == '!details':
-        em = discord.Embed(title='read my code!', url='https://repl.it/@TCReaper/ReaperPy', colour=0xb949b5)
-        em = em.set_author(name='TCReaper',url='https://github.com/TCReaper')
+        em = discord.Embed(title='read my code!', url='https://github.com/TCReaper/Reaper.py/', colour=0xb949b5)
+        em = em.set_author(name='TCReaper')
         await client.send_message(message.channel,embed=em)
 
     # END OF !DETAILS
