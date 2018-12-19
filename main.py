@@ -25,9 +25,9 @@ async def on_message(message):
 
     if message.content.startswith('!bot'):
         await client.delete_message(message)
+    	msg = message.content.split(' ')
+    	msg = ' '.join(msg[1:])
         if message.author.id == creatorID:
-        	msg = message.content.split(' ')
-        	msg = ' '.join(msg[1:])
             msg = (msg).format(message)
             await client.send_message(message.channel, msg)
             return
