@@ -101,7 +101,7 @@ async def on_message(message):
 
             em = discord.Embed(title=embed['title'], description=embed['description'], colour=0xb949b5)
             em = em.set_thumbnail(url=poke_url)
-            em = em.set_author(icon_url=owner_img)
+            em = em.set_author(name='reapyr',icon_url=owner_img)
             em = em.set_footer(text=footer_text)
 
             await client.send_message(message.channel,embed=em)
