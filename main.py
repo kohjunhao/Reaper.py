@@ -25,9 +25,9 @@ async def on_message(message):
 
     if message.content.startswith('!bot'):
         await client.delete_message(message)
-        msg = message.content.split(' ')
-        msg = ' '.join(msg[1:])
         if message.author.id == creatorID:
+        	msg = message.content.split(' ')
+        	msg = ' '.join(msg[1:])
             msg = (msg).format(message)
             await client.send_message(message.channel, msg)
             return
@@ -96,12 +96,12 @@ async def on_message(message):
             else:
                 await client.delete_message(message)
             poke_url = embed['image']['url']
-            poke_proxy = embed['image']['proxy_url']
             footer_text = embed['footer']['text'].split('- Use')[0]
+            owner_img = embed['thumbnail']['url']
 
             em = discord.Embed(title=embed['title'], description=embed['description'], colour=0xb949b5)
             em = em.set_thumbnail(url=poke_url)
-            #em = em.set_author(name='reaper.py',url='https://repl.it/@TCReaper/ReaperPy',icon_url='https://i.imgur.com/4ndyFlo.png')
+            em = em.set_author(icon_url=owner_img)
             em = em.set_footer(text=footer_text)
 
             await client.send_message(message.channel,embed=em)
