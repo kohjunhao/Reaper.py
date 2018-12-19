@@ -145,7 +145,7 @@ async def on_message(message):
     # END OF !DETAILS
 
     if message.content.lower().startswith('test'):
-        msg = 'I\'m tired. {0.author.mention}'.format(message)
+        msg = 'received, {0.author.mention}'.format(message)
         await client.send_message(message.channel, msg)
         return
         
