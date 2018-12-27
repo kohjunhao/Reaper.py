@@ -91,13 +91,17 @@ async def on_message(message):
         # START OF P!INFO
 
         if embed['title'].startswith('Level'):
-            if 'fake' in message.content:
-                return
-            else:
-                await client.delete_message(message)
+          
+            await client.delete_message(message)
+            
             poke_url = embed['image']['url']
             footer_text = embed['footer']['text'].split('- Use')[0]
-            owner_img = embed['thumbnail']['url']
+
+            if 'thumbnail' in embed:
+                owner_img = embed['thumbnail']['url']
+            else:
+                owner_img = 'https://cdn1.iconfinder.com/data/icons/smashicons-movies-yellow/57/63_-Pokemon-_Yellow-512.png'
+                
 
             em = discord.Embed(title=embed['title'], description=embed['description'], colour=0xb949b5)
             em = em.set_thumbnail(url=poke_url)
