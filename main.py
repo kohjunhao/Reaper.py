@@ -112,6 +112,22 @@ async def on_message(message):
             return
 
         # END OF P!INFO
+        # START OF P!MARKET
+
+        if embed['title'].startswith('Pokécord Market'):
+            lines = desc.split('\n')
+            okay = []
+            for i in range(len(lines)):
+                item = lines[i]
+                price = int(item.split('Price: ')[1].split(' Credits')[0])
+                poke_id = item.split('ID: ')[1].split(' |')[0]
+                if price < 8:
+                    okay.append(poke_id)
+            msg = ' '.join(okay)
+            await client.send_message(message.channel, msg)
+            return
+
+        #END OF P!MARKET
     # START OF P!SEARCH
 
     if message.content.startswith('!pokemon') or message.content.startswith('p!search'):
