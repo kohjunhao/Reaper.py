@@ -115,6 +115,7 @@ async def on_message(message):
         # START OF P!MARKET
 
         if embed['title'].startswith('Pokécord Market'):
+            desc = embed['description']
             lines = desc.split('\n')
             okay = []
             for i in range(len(lines)):
@@ -127,7 +128,21 @@ async def on_message(message):
             await client.send_message(message.channel, msg)
             return
 
-        #END OF P!MARKET
+        # END OF P!MARKET
+        # START OF P!POKEMON --NAME
+
+        if desc.startswith('**Emolga**'):
+            emolgas = []
+            desc = desc.split('Number: ')
+            for i in desc:
+                i = i.split(' | IV')[0]
+                emolgas.append(i)
+            emolgas = emolgas[1:]
+            msg = ('p`!`p add '+' '.join(emolgas)).format(message)
+            await client.send_message(message.channel, msg)
+            return
+
+        # END OF P!POKEMON --NAME         
     # START OF P!SEARCH
 
     if message.content.startswith('!pokemon') or message.content.startswith('p!search'):
