@@ -61,6 +61,7 @@ async def on_message(message):
         
         # START OF P!CATCH
 
+        desc = embed['description']
         if desc.startswith('Guess the pokémon'):
             url = embed['image']['url']
             google = 'https://images.google.com/searchbyimage?image_url='+url
@@ -131,7 +132,7 @@ async def on_message(message):
         # END OF P!MARKET
         # START OF P!POKEMON --NAME
 
-        if desc.startswith('**Emolga**'):
+        if desc.startswith('**'):
             emolgas = []
             desc = desc.split('Number: ')
             for i in desc:
@@ -139,7 +140,8 @@ async def on_message(message):
                 emolgas.append(i)
             emolgas = emolgas[1:]
             msg = ('p`!`p add '+' '.join(emolgas)).format(message)
-            await client.send_message(message.channel, msg)
+            if len(emolgas) > 0:
+            	await client.send_message(message.channel, msg)
             return
 
         # END OF P!POKEMON --NAME         
