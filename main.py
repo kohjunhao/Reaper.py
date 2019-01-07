@@ -181,6 +181,10 @@ async def on_message(message):
 
     # END OF !DETAILS
 
+    if message.content.lower() == 'mkt':
+    	msg = 'p!market search --order price a --showiv --name '.format(message)
+    	await client.send_message(message.channel,msg)
+
     if message.content.lower().startswith('test'):
         msg = 'received, {0.author.mention}'.format(message)
         await client.send_message(message.channel, msg)
