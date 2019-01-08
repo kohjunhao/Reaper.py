@@ -76,16 +76,16 @@ async def on_message(message):
 
             msg = (name).format(message)
             msg = await client.send_message(message.channel, msg)
-            await client.add_reaction(msg,"\u2705")
-            await client.add_reaction(msg,"\u274E")
-            x = client.get_all_members()
-            for person in x:
-                if person.id == creatorID:
-                    author = person
-                    break
-            response = await client.wait_for_reaction(["\u2705","\u274E"],user=author,message=msg)
-            accuracy = update_acc(response.reaction.emoji)
-            await client.clear_reactions(msg)
+            # await client.add_reaction(msg,"\u2705")
+            # await client.add_reaction(msg,"\u274E")
+            # x = client.get_all_members()
+            # for person in x:
+            #     if person.id == creatorID:
+            #         author = person
+            #         break
+            # response = await client.wait_for_reaction(["\u2705","\u274E"],user=author,message=msg)
+            # accuracy = update_acc(response.reaction.emoji)
+            # await client.clear_reactions(msg)
             return
 
         # END OF P!CATCH
@@ -162,15 +162,16 @@ async def on_message(message):
 
     # END OF P!SEARCH
     # START OF P!ACCURACY
+ 
+    # ctrl shift / to comment blocks
 
-    if message.content.startswith('p!accuracy'):
-        break
-        accuracy = update_acc()
-        msg = ('current accuracy: '+str(accuracy)).format(message)
-        await client.send_message(message.channel,msg)
-        if 'detailed' in message.content:
-            msg = ('right/wrong ratio: '+update_acc(details=True))
-            await client.send_message(message.channel,msg)
+    # if message.content.startswith('p!accuracy'):
+    #     accuracy = update_acc()
+    #     msg = ('current accuracy: '+str(accuracy)).format(message)
+    #     await client.send_message(message.channel,msg)
+    #     if 'detailed' in message.content:
+    #         msg = ('right/wrong ratio: '+update_acc(details=True))
+    #         await client.send_message(message.channel,msg)
 
     # END OF P!ACCURACY
     # START OF !DETAILS
