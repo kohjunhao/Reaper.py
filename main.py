@@ -119,13 +119,19 @@ async def on_message(message):
             desc = embed['description']
             lines = desc.split('\n')
             okay = []
+            lowkay = []
             for i in range(len(lines)):
                 item = lines[i]
                 price = int(item.split('Price: ')[1].split(' Credits')[0])
                 poke_id = item.split('ID: ')[1].split(' |')[0]
                 if price < 8:
                     okay.append(poke_id)
-            msg = ' '.join(okay)
+                else:
+                    lowkay.append(poke_id)
+                    
+            msg1 = ' '.join(okay)
+            msg2 = ' '.join(lowkay)
+            msg = msg1+'\n\n'+msg2
             await client.send_message(message.channel, msg)
             return
 
