@@ -164,6 +164,7 @@ async def on_message(message):
     # START OF P!ACCURACY
 
     if message.content.startswith('p!accuracy'):
+        break
         accuracy = update_acc()
         msg = ('current accuracy: '+str(accuracy)).format(message)
         await client.send_message(message.channel,msg)
@@ -190,7 +191,7 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
         return
         
-    if message.content.startswith('p!') and not message.content.startswith('p!m'):
+    if message.content.startswith('p!c') or message.content.startswith('p!p'):
         await client.delete_message(message)
 
 @client.event
