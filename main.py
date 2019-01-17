@@ -62,16 +62,11 @@ async def on_message(message):
 
 # Program make a simple calculator that can add, subtract, multiply and divide using functions
 
-if message.content.lower().startswith("!!math ")
-	msg = message.content
-	equation = msg.split('math ')[1]
-
-    if not set(equation).intersection(string.ascii_letters + '{}[]_;\n'):
-        msg = ('answer is '+eval(equation)).format(message)
+	if message.content.lower().startswith("!!math ")
+		msg = message.content
+		equation = msg.split('math ')[1]
+		msg = ('answer is '+eval(equation)).format(message)
 		await client.send_message(message.channel,msg)
-    else:
-        print("illegal character")
-        return None
 
 
 
