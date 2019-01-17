@@ -1,6 +1,4 @@
 
-# POKEMON ON DISCORD
-
 import os
 import sys
 import time
@@ -48,7 +46,7 @@ async def on_message(message):
         
         
     if message.content.lower().startswith('test'):
-        msg = 'what u wan {0.author.mention}'.format(message)
+        msg = 'fuck off nigga {0.author.mention}'.format(message)
         await client.send_message(message.channel, msg)
         return
 
