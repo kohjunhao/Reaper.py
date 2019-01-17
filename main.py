@@ -55,9 +55,12 @@ async def on_message(message):
     if message.content.lower().startswith('!!math'):
         msg = message.content
         answer = str(eval(msg.split('math ')[1]))
-        choice = random.randint(0,1)
+        choice = random.randint(0,2)
         if choice == 1:
             msg = ('hahaha nigga simple, answer is '+answer).format(message)
+        elif choice == 2:
+        	msg = ('fuck off, answer so easy also need ask, legit waste my time').format(message)
+        #this is a condition where choice =0
         else:
             msg = ('fucking idiot lmao so easy also don\'t know, '+answer).format(message)
         
