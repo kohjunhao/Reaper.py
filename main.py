@@ -67,11 +67,11 @@ async def on_message(message):
         await client.send_message(message.channel,msg)
 
     if message.content.lower().startswith('!!choose'):
-        msg = msg.split('|')
+        msg = msg.split('choose')[1].split('|')
         length = len(msg)
         choice = random.randint(0,length-1)
         chosen = msg[choice]
-        msg = ('i pick.... '+chosen.strip()).format(message)
+        msg = ('simple decision also need me to do wtf. --- '+chosen.strip()).format(message)
         await client.send_message(message.channel,msg)
 
 
