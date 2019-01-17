@@ -2,6 +2,7 @@
 import os
 import sys
 import time
+import random
 import discord
 import urllib.request
 
@@ -53,8 +54,13 @@ async def on_message(message):
 
     if message.content.lower().startswith('!!math'):
         msg = message.content
-        equation = msg.split('math ')[1]
-        msg = ('answer is '+str(eval(equation))).format(message)
+        answer = str(eval(msg.split('math ')[1]))
+        choice = random.randint(0,1)
+        if choice == 1:
+            msg = ('hahaha nigga simple, answer is '+answer).format(message)
+        else:
+            msg = ('fucking idiot lmao so easy also don\'t know, '+answer).format(message)
+        
         await client.send_message(message.channel,msg)
 
 
