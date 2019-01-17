@@ -2,6 +2,7 @@
 import os
 import sys
 import time
+import string
 import discord
 import urllib.request
 
@@ -45,7 +46,7 @@ async def on_message(message):
         
         
         
-    if message.content.lower().startswith('test'):
+    if message.content.lower().startswith('YEETSKETIT'):
         msg = 'fuck off nigga {0.author.mention}'.format(message)
         await client.send_message(message.channel, msg)
         return
@@ -59,6 +60,22 @@ async def on_message(message):
             msg = i.name.format(message)
             await client.send_message(message.channel, msg)
 
+# Program make a simple calculator that can add, subtract, multiply and divide using functions
+
+if message.content.lower().startswith("!!math ")
+	msg = message.content
+	equation = msg.split('math ')[1]
+
+    if not set(equation).intersection(string.ascii_letters + '{}[]_;\n'):
+        msg = ('answer is '+eval(equation)).format(message)
+		await client.send_message(message.channel,msg)
+    else:
+        print("illegal character")
+        return None
+
+
+
+
 @client.event
 async def on_ready():
     print('Logged in as')
@@ -70,3 +87,4 @@ async def on_ready():
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
 client.run(token)
+
