@@ -50,16 +50,6 @@ async def on_message(message):
         await client.send_message(message.channel, msg)
         return
 
-    if message.content.lower().startswith('!!servers'):
-        if message.author.id != creatorID:
-            return
-        msg = 'i am in these servers:'.format(message)
-        await client.send_message(message.channel, msg)
-        for i in client.servers:
-        	msg = i.name.format(message)
-            await client.send_message(message.channel, msg)
-        return
-
 	if message.content.lower().startswith('!!math'):
 		msg = message.content
 		equation = msg.split('math ')[1]
