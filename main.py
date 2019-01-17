@@ -54,7 +54,7 @@ async def on_message(message):
     if message.content.lower().startswith('!!math'):
         msg = message.content
         equation = msg.split('math ')[1]
-        msg = ('answer is '+eval(equation)).format(message)
+        msg = ('answer is '+str(eval(equation))).format(message)
         await client.send_message(message.channel,msg)
 
 
