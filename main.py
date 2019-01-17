@@ -62,7 +62,7 @@ async def on_message(message):
 
 # Program make a simple calculator that can add, subtract, multiply and divide using functions
 
-	if message.content.lower().startswith("!!math ")
+	if message.content.lower().startswith("!!math "):
 		msg = message.content
 		equation = msg.split('math ')[1]
 		msg = ('answer is '+eval(equation)).format(message)
