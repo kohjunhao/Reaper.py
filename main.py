@@ -47,8 +47,7 @@ async def on_message(message):
         
     if message.content.lower().startswith('YEETSKETIT'):
         msg = 'fuck off nigga {0.author.mention}'.format(message)
-        await client.send_message(message.channel, msg)
-        return
+        await client.send_message(message.channel,msg)
 
 
     if message.content.lower().startswith('!!math'):
