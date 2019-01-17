@@ -66,7 +66,7 @@ async def on_message(message):
         
         await client.send_message(message.channel,msg)
 
-    if message.content.lower().startswith('!!math'):
+    if message.content.lower().startswith('!!choose'):
         msg = msg.split('|')
         length = len(msg)
         choice = random.randint(0,length-1)
