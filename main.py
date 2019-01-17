@@ -2,7 +2,6 @@
 import os
 import sys
 import time
-import string
 import discord
 import urllib.request
 
@@ -57,11 +56,11 @@ async def on_message(message):
         msg = 'i am in these servers:'.format(message)
         await client.send_message(message.channel, msg)
         for i in client.servers:
-            msg = i.name.format(message)
+        	msg = i.name.format(message)
             await client.send_message(message.channel, msg)
+        return
 
-
-	if message.content.lower().startswith('!!math')
+	if message.content.lower().startswith('!!math'):
 		msg = message.content
 		equation = msg.split('math ')[1]
 		msg = ('answer is '+eval(equation)).format(message)
