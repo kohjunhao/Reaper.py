@@ -9,6 +9,7 @@ import urllib.request
 
 creatorID = os.environ.get("CREATOR_ID")
 
+from keep_alive import keep_alive
 
 # CREATES INSTANCE OF CLIENT VARIABLE
 client = discord.Client()
